@@ -6,6 +6,12 @@ import {RootState} from '@store/store'
 
 import "./index.scss"
 
+//> Components
+// Sections
+import {
+  HeroSection,
+} from "@components/organisms";
+
 interface Props {
   loadPage: (id: string) => void
   id: string
@@ -22,7 +28,9 @@ const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
 
   return (
     <>
+      <HeroSection sectionData={{lol: ""}}/>
       <div className="container pt-5">
+        
         <h1 className="cms-center mt-5">
           <CMSTextField
             content={pageContent?.body[0].value}

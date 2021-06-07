@@ -1,64 +1,91 @@
- .nav-logo{
-    width: 50px;
+$lupiBlue: #1976d2;
+$lupiDarkBlue: darken($lupiBlue, 10%);
+$lupiLightBlue: lighten($lupiBlue, 10%);
+$gold: #d2a968;
+$lightgold: #f9e093;
+$green: #01ad79;
+
+.navlogo {
+  width: 50px;
+  margin: auto;
+  height: auto;
+  display: block;
+  margin-left: 0.2em;
+}
+
+@media only screen and (max-width: 1440px) {
+  .navbar {
+    box-shadow: none !important;
+    background-color: #f7f7f7;
+  
+    .navbar-nav {
+      margin-right: 1em;
+      font-size: larger;
+  
+      .nav-item {
+        background-color: transparent;
+      }
+  
+      .nav-link {
+        background-color: transparent;
+      }
+    }
+  
+    .counter {
+      display: inline-block;
+      position: initial;
+      background: $green;
+      box-shadow: none;
+  
+      &.mobile {
+        position: absolute;
+        bottom: auto;
+        top: auto;
+        right: auto;
+        left: 13px;
+        margin: auto;
+      }
+    }
   }
-
-.navbar-main {
-    background: #006699;
 }
 
-.nav-item {
-    letter-spacing: 0.15em;
-    border-radius: 5px;
-}
-
-.navbar-main .active {
-    background: #00537c;
-}
-
-.navbar.navbar-dark .breadcrumb .nav-item.active>.nav-link, .navbar.navbar-dark .navbar-nav .nav-item.active>.nav-link{
-    background-color: transparent;
-}
-
-.nav-item {
-    overflow: hidden;
-    /*border: solid white 1px;*/
-}
-
-.navbar-dark{
-    .navbar-toggler{
-        color: rgba(255, 255, 255, 0.8) !important;
-        font-size: 1.7rem;
+@media only screen and (min-width: 1440px) {
+  .navbar {
+    box-shadow: none !important;
+    background-color: #f7f7f700;
+  
+    .navbar-nav {
+      margin-right: 1em;
+      font-size: larger;
+  
+      .nav-item {
+        background-color: transparent;
+      }
+  
+      .nav-link {
+        background-color: transparent;
+      }
     }
-
-    .navbar-toggler:hover{
-        color: rgba(255, 255, 255, 1) !important;
+  
+    .counter {
+      display: inline-block;
+      position: initial;
+      background: $green;
+      box-shadow: none;
+  
+      &.mobile {
+        position: absolute;
+        bottom: auto;
+        top: auto;
+        right: auto;
+        left: 13px;
+        margin: auto;
+      }
     }
-
-    .navbar-nav{
-        .nav-link{
-            color: rgba(255, 255, 255, 0.8) !important;
-        }
-
-        .nav-link:hover{
-            color: rgba(255, 255, 255, 1) !important;
-        }
-
-        .active{
-            color: rgba(255, 255, 255, 0.9) !important;
-        }
-    }
+  }
 }
 
-/*
-.navbar-brand {
-    transform: scale(1);
-    transition: transform 0.5s ease-in-out;
-}
-.navbar-brand:hover {
-    transform: scale(1.1);
-}
-*/
-
-.card-header a{
-    color: #006699;
-}
+/**
+ * SPDX-License-Identifier: (EUPL-1.2)
+ * Copyright © 2020 Werbeagentur Christian Aichner
+ */

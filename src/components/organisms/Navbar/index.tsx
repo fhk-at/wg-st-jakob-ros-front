@@ -1,3 +1,8 @@
+// React Router DOM bindings
+//import { Link } from "react-router-dom";
+
+//> MDB
+// "Material Design for Bootstrap" is a great UI design framework
 import {
   MDBContainer,
   MDBNavbar,
@@ -34,59 +39,112 @@ const Navbar = ({
 }: Props) => {
 
   const [showNavbar, setShowNavbar] = useState(false);
-  const activePath = window.location.pathname
+  //const activePath = window.location.pathname
   
   return (
-    <>  
-      <MDBNavbar className='navbar-main' expand='lg' dark>
-        <MDBContainer>
+    <>
+      <MDBNavbar
+        light
+        color="white"
+        fixed={true}
+        expand="md"
+        scrolling
+        transparent
+      >
+        <MDBContainer fluid>
           <MDBNavbarBrand href="/">
-            <img className="nav-logo" src={logoUrl} alt={logoAlt} loading="lazy" />
+            <img src={logoUrl} alt={logoAlt} className="navlogo" />
           </MDBNavbarBrand>
-
-          <MDBNavbarToggler
-            aria-controls='navbarSupportedContent'
-            aria-expanded='false'
-            aria-label='Toggle navigation'
-            onClick={() => setShowNavbar(!showNavbar)}
-          >
-            <MDBIcon icon='bars' fas />
-          </MDBNavbarToggler>
-
-          <MDBCollapse navbar show={showNavbar}>
-            <MDBNavbarNav className='mr-auto mb-2 mb-lg-0'>
-
-              <MDBNavbarItem className='ms-2 font-weight-bold text-uppercase'>
-                <MDBNavbarLink active={activePath === '/'} aria-current='page' href='/'>
-                  Home
+          <div>
+            <MDBNavbarToggler
+              aria-controls='navbarSupportedContent'
+              aria-expanded='false'
+              aria-label='Toggle navigation'
+              onClick={() => setShowNavbar(!showNavbar)}
+            >
+              <MDBIcon icon='bars' fas />
+            </MDBNavbarToggler>
+          </div>
+          <MDBCollapse show={showNavbar} navbar>
+            <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="#"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Über uns
                 </MDBNavbarLink>
               </MDBNavbarItem>
-
-              <MDBNavbarItem className='ms-2 font-weight-bold text-uppercase'>
-                <MDBNavbarLink active={activePath === '/groups'} href="groups">Gruppen</MDBNavbarLink>
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="#me"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Wasseranschluss
+                </MDBNavbarLink>
               </MDBNavbarItem>
-
-              <MDBNavbarItem className='ms-2 font-weight-bold text-uppercase'>
-                <MDBNavbarLink active={activePath === '/faq'} href="faq">FAQ</MDBNavbarLink>
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="#products"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Wasser
+                </MDBNavbarLink>
               </MDBNavbarItem>
-
-              <MDBNavbarItem className='ms-2 font-weight-bold text-uppercase'>
-                <MDBNavbarLink active={activePath === '/rules'} href="rules">Regeln</MDBNavbarLink>
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="#products"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Kosten
+                </MDBNavbarLink>
               </MDBNavbarItem>
-
-              <MDBNavbarItem className='ms-2 font-weight-bold text-uppercase'>
-                <MDBNavbarLink active={activePath === '/contact'} href="contact">Kontakt</MDBNavbarLink>
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="#products"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Wasserzähler
+                </MDBNavbarLink>
               </MDBNavbarItem>
-
-              <MDBNavbarItem className='ms-2 font-weight-bold text-uppercase'>
-                <MDBNavbarLink active={activePath === '/howto'} href="howto">How-To</MDBNavbarLink>
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="#products"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Kontakt
+                </MDBNavbarLink>
               </MDBNavbarItem>
-
+              {/*<MDBNavbarItem>
+                <MDBNavbarLink
+                  to="/profile"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  Konto
+                </MDBNavbarLink>
+              </MDBNavbarItem>*
+              <MDBNavbarItem>
+                <MDBNavbarLink
+                  to="/cart"
+                  onClick={() => setShowNavbar(!showNavbar)}
+                >
+                  <span className="d-flex align-items-center">
+                    <MDBIcon
+                      icon="shopping-basket"
+                      className="mr-1 d-inline-block"
+                    />
+                    Kontakt
+                    {this.props.checkout &&
+                      this.props.checkout.lineItems &&
+                      this.props.checkout.lineItems.edges.length > 0 && (
+                        <span className="counter ml-1">
+                          {this.getCartCount()}
+                        </span>
+                      )}
+                  </span>
+                </MDBNavbarLink>
+                      </MDBNavbarItem>*/}
             </MDBNavbarNav>
-            {/* <form className='d-flex input-group w-auto'>
-              <input type='search' className='form-control' placeholder='Type query' aria-label='Search' />
-              <MDBBtn color='primary'>Search</MDBBtn>
-            </form> */}
           </MDBCollapse>
         </MDBContainer>
       </MDBNavbar>

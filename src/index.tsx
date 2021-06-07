@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 
 import {store, PersistGate, persistor} from '@store/store'
-
+import { ParallaxProvider } from 'react-scroll-parallax';
 import {CMSWrapper} from 'jaen-cms/lib/index'
 import App from './pages/_app'
 
@@ -12,7 +12,9 @@ ReactDOM.render(
     <React.StrictMode>
       <PersistGate loading={null} persistor={persistor}>
         <CMSWrapper bifrostUrls={{httpUrl: 'https://ccms.snek.at/graphql'}}>
-          <App />
+          <ParallaxProvider>
+            <App />
+          </ParallaxProvider>
         </CMSWrapper>
       </PersistGate>
     </React.StrictMode>

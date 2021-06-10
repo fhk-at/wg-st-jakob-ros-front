@@ -1,62 +1,35 @@
-import React, { useRef, useEffect, useState } from 'react';
-
-import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
- 
-mapboxgl.accessToken = 'pk.eyJ1Ijoia2xlYmVyYmF1bSIsImEiOiJja3BsdnJneGMwMTJwMnZvNTB4YXp4ZXF3In0.iTYyK0VQS_0gn-MhorE8Xg';
-
-//> Additional modules
-// Parallax
-// import { Parallax } from "react-scroll-parallax";
-
-// Parallax
-// Scroll
-// import { Link } from "react-scroll";
-
-//> MDB
-// "Material Design for Bootstrap" is a great UI design framework
-import {
-  MDBRow,
-  MDBCol,
-  // MDBBtn,
-  // MDBIcon,
-  // MDBContainer
-} from 'mdb-react-ui-kit';
-
-//> CSS
-import "./index.scss";
-
-//> Images
-// Coffee center image
-//import localImage from "../../../../common/img/content/bg/bg1.jpg";
-
-// Placeholder image
+//import withWidth, { isWidthUp } from '@material-ui/core/withWidth'
+import ReactMapboxGl, { Feature, Layer } from 'react-mapbox-gl'
 
 
-interface Props {
-    sectionData: object
-  }
 
-const MapSection = ({sectionData}: Props): JSX.Element => {
-    let loaded = false
-  
-
-    console.log(loaded)
-    console.log(sectionData)
+const MapSection = () => {
+    const ReactMap = ReactMapboxGl({
+        accessToken:
+            'pk.eyJ1IjoibW9ydG9uaSIsImEiOiJjaXYzOXE0bXYwMWM2Mm90YmV3aGJoYWtvIn0.oVEPUNVTai26CGUQPUIJLQ',
+        interactive: true,
+        scrollZoom: true,
+    })
 
     return (
-      <div className="map">
-        <MDBRow className="justify-content-center">
-          <MDBCol md="6" className="mb-3 col-timeline">
-            lol
-          </MDBCol>
-        </MDBRow>
-      </div>
+        <ReactMap
+            style='mapbox://styles/mapbox/streets-v11'
+            containerStyle={{
+                height: '475px',
+                width: '100%',
+            }}
+            center={[14.062960626902797, 46.54343025905074]}
+            zoom={[15]}
+        >
+            <Layer
+                type='symbol'
+                id='marker'
+                layout={{ 'icon-image': 'marker-15' }}
+            >
+                <Feature coordinates={[14.062960626902797, 46.54343025905074]} />
+            </Layer>
+        </ReactMap>
     )
-  }
-  
-  export default MapSection
+}
 
-/**
- * SPDX-License-Identifier: (EUPL-1.2)
- * Copyright © 2020 Werbeagentur Christian Aichner
- */
+export default MapSection

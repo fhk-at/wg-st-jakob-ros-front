@@ -33,24 +33,24 @@ $image-path: "../../../../common/img/" !default;
     }
   }
 
-  p {
-    p{
-      padding-left: 2.4rem;
-    }
-    ul{
-      padding-left: 3.4rem;
-    }
-  }
+  // p {
+  //   p{
+  //     padding-left: 2.4rem;
+  //   }
+  //   ul{
+  //     padding-left: 3.4rem;
+  //   }
+  // }
 
   h1{
-    &::before{
-      display: inline-block;
-      padding-right: .7rem;
-      //background-image: url("#{$image-path}/content/water/drop.png");
-      background-size: 4em;
-      background-position: center;
-      content: "0";
-    }
+    // &::before{
+    //   display: inline-block;
+    //   padding-right: .7rem;
+    //   //background-image: url("#{$image-path}/content/water/drop.png");
+    //   background-size: 4em;
+    //   background-position: center;
+    //   content: "0";
+    // }
     &::after{
       display: block;
       font-size: 1rem;

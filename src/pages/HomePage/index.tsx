@@ -1,6 +1,6 @@
 import {useEffect} from 'react'
 
-import {CMSRichTextField, CMSTextField} from 'jaen-cms/lib/editable'
+//import {CMSRichTextField, CMSTextField} from 'jaen-cms/lib/editable'
 
 import {RootState} from '@store/store'
 
@@ -15,7 +15,7 @@ import {
   HistorySection,
   PurificationSection,
   ConnectSection,
-  NewsSection,
+  // NewsSection,
   MapSection,
 } from "@components/organisms";
 
@@ -33,6 +33,8 @@ const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
   const CMSPageId = `${id}_${name}`
   const pageContent = pages[CMSPageId]?.serverContent
 
+  console.log(pageContent)
+
   return (
     <>
       <HeroSection sectionData={{lol: ""}}/>
@@ -40,11 +42,11 @@ const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
       <ConnectSection sectionData={{lol: ""}}/>
       <PurificationSection sectionData={{lol: ""}}/>
       <AboutSection sectionData={{lol: ""}}/>
-      <NewsSection sectionData={{lol: ""}}/>
+      {/* <NewsSection sectionData={{lol: ""}}/> */}
       <HistorySection sectionData={{lol: ""}}/>
-      <MapSection sectionData={{lol: ""}}/>
+      <MapSection />
 
-      <div className="test-con container pt-5 mx-0">
+      {/* <div className="test-con container pt-5 mx-0">
         
         <h1 className="cms-center mt-5">
           <CMSTextField
@@ -76,7 +78,7 @@ const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
             }}
           />
         </div>
-      </div>
+      </div> */}
     </>
   )
 }

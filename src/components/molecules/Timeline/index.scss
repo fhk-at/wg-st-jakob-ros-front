@@ -1,0 +1,22 @@
+$image-path: "../../../../common/img/" !default;
+
+.timeline{
+  .row{
+    width: 100%;
+
+    .col-chrono{
+      height: 80vh;
+    }
+  }
+
+  .css-ic9qte-VerticalCircleWrapper::after{
+    height: 120% !important;
+  }
+}
+
+
+  /**
+   * SPDX-License-Identifier: (EUPL-1.2)
+   * Copyright © 2020 Werbeagentur Christian Aichner
+   */
+  

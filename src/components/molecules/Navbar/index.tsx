@@ -47,7 +47,7 @@ const Navbar = ({
         light
         color="white"
         fixed={true}
-        expand="md"
+        expand="lg"
         scrolling
         transparent
       >
@@ -55,6 +55,7 @@ const Navbar = ({
           <MDBNavbarBrand href="/">
             <img src={logoUrl} alt={logoAlt} className="navlogo" />
           </MDBNavbarBrand>
+          <MDBNavbarBrand className="navtitle d-block d-lg-none">WG St. Jakob i. Ros.</MDBNavbarBrand>
           <div>
             <MDBNavbarToggler
               aria-controls='navbarSupportedContent'
@@ -62,14 +63,14 @@ const Navbar = ({
               aria-label='Toggle navigation'
               onClick={() => setShowNavbar(!showNavbar)}
             >
-              <MDBIcon icon='bars' fas />
+              <MDBIcon icon='bars' size='lg' />
             </MDBNavbarToggler>
           </div>
           <MDBCollapse show={showNavbar} navbar>
             <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="#"
+                  href="#"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   Über uns
@@ -77,7 +78,7 @@ const Navbar = ({
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="#me"
+                  href="#me"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   Wasseranschluss
@@ -85,7 +86,7 @@ const Navbar = ({
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="#products"
+                  href="#products"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   Wasser
@@ -93,7 +94,7 @@ const Navbar = ({
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="#products"
+                  href="#products"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   Kosten
@@ -101,7 +102,7 @@ const Navbar = ({
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="#products"
+                  href="#products"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   Wasserzähler
@@ -109,7 +110,7 @@ const Navbar = ({
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="#products"
+                  href="#products"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   Kontakt
@@ -117,15 +118,15 @@ const Navbar = ({
               </MDBNavbarItem>
               {/*<MDBNavbarItem>
                 <MDBNavbarLink
-                  to="/profile"
+                  href="/profile"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
-                  Konto
+                  Konhref
                 </MDBNavbarLink>
               </MDBNavbarItem>*
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  to="/cart"
+                  href="/cart"
                   onClick={() => setShowNavbar(!showNavbar)}
                 >
                   <span className="d-flex align-items-center">

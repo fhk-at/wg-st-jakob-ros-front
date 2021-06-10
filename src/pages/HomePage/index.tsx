@@ -10,6 +10,13 @@ import "./index.scss"
 // Sections
 import {
   HeroSection,
+  IntroSection,
+  AboutSection,
+  HistorySection,
+  PurificationSection,
+  ConnectSection,
+  NewsSection,
+  MapSection,
 } from "@components/organisms";
 
 interface Props {
@@ -29,7 +36,15 @@ const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
   return (
     <>
       <HeroSection sectionData={{lol: ""}}/>
-      <div className="container pt-5">
+      <IntroSection sectionData={{lol: ""}}/>
+      <ConnectSection sectionData={{lol: ""}}/>
+      <PurificationSection sectionData={{lol: ""}}/>
+      <AboutSection sectionData={{lol: ""}}/>
+      <NewsSection sectionData={{lol: ""}}/>
+      <HistorySection sectionData={{lol: ""}}/>
+      <MapSection sectionData={{lol: ""}}/>
+
+      <div className="test-con container pt-5 mx-0">
         
         <h1 className="cms-center mt-5">
           <CMSTextField

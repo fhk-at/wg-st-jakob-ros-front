@@ -1,5 +1,9 @@
 $flex-center-ul-mb                           : 1rem !default;
 
+// .modal-open {
+//   overflow: auto !important;
+// }
+
 body {
   background-color: #fff;
   overflow-y: scroll;
@@ -8,8 +12,9 @@ body {
   background-position-x: center;
   background-repeat: repeat-x;
   background-size: 60vh;
-  background-image: url('../circuit_dots.svg');
-  padding-bottom: 30vh;
+  //background-image: url('../circuit_dots.svg');
+  //padding-bottom: 30vh;
+  padding-right: 0px !important;
   position: relative;
 }
 

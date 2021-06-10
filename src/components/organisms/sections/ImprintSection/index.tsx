@@ -155,7 +155,7 @@ const HeroSection = ({sectionData}: Props): JSX.Element => {
           </Parallax>
         </div>
         <MDBRow className="w-100 m-0">
-          <MDBCol xl="6" className="p-0">
+          <MDBCol xl="6" className="col-xxl-6 p-0">
             <MDBAnimation type="fadeInLeft" duration={900}>
               <MDBView
                 src={
@@ -175,7 +175,7 @@ const HeroSection = ({sectionData}: Props): JSX.Element => {
               </MDBView>
             </MDBAnimation>
           </MDBCol>
-          <MDBCol xl="6" className="p-0">
+          <MDBCol xl="6" className="col-xxl-6 p-0">
             <MDBRow className="flex-center m-0 p-0">
               <MDBCol xl="6" className="d-xl-block d-none">
                 <div className="hero-side customfont">

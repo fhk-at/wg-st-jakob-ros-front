@@ -6,11 +6,21 @@ $lightgold: #f9e093;
 $green: #01ad79;
 
 .navlogo {
-  width: 50px;
-  margin: auto;
+  width: 70px;
+  margin: 0;
   height: auto;
   display: block;
-  margin-left: 0.2em;
+  //margin-left: 0.2em;
+}
+
+.navtitle {
+  font-size: 10em;
+  line-height: 1.1em;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: bold;
+  letter-spacing: 0.04em;
 }
 
 @media only screen and (max-width: 1440px) {

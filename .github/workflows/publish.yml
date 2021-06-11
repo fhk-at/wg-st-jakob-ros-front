@@ -50,8 +50,8 @@ jobs:
         # append the current datetime to the end of `jaen-data.json`
         echo `date` >> jaen-data.json
         
-        # reveal what `dates.txt` looks like in the logs
-        cat dates.txt
+        # reveal what `jaen-data.json` looks like in the logs
+        cat jaen-data.json
         
         # Git: set identity
         git config --global user.name "snekmin"
@@ -64,4 +64,4 @@ jobs:
         # Git: add, commit, and push changes
         git add dates.txt
         git commit -m "Update jaen-data.json"
-        GIT_TRACE=1 git push --verbose origin jaen-storage
+        GIT_TRACE=1 git push -f --verbose origin jaen-storage

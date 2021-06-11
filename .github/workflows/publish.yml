@@ -41,6 +41,7 @@ jobs:
 
         # ensure we're on the `jaen-storage` branch.
         git checkout --orphan  jaen-storage
+        git branch --set-upstream-to=origin/jaen-storage jaen-storage
         
         # create or update `dates.txt`
         touch dates.txt

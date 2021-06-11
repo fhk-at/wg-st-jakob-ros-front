@@ -21,7 +21,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: '.'
-        ref: 'ccms-storage'
     
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
     - name: Update dates.txt with new date
@@ -32,6 +31,45 @@ jobs:
       
       # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
+      
+      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#name
+name: Main
+
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions#on
+on: repository_dispatch
+
+# https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobs
+jobs:
+
+  # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_id
+  first_job:
+
+    # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: ubuntu-latest
+  
+    # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idsteps
+    steps:
+    
+    # https://help.github.com/en/articles/virtual-environments-for-github-actions#default-environment-variables
+    # https://github.com/actions/checkout
+    - uses: actions/checkout@v1
+    
+    # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
+    - name: Update dates.txt with new date
+
+      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsenv
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+      run: |
+
+        # remove `jaen-storage` branch.
+        git branch -d jaen-storage
+        
+        # ensure we're on the `jaen-storage` branch.
+        git checkout --orphan  jaen-storage
+        
         # create or update `dates.txt`
         touch dates.txt
         

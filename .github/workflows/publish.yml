@@ -32,16 +32,15 @@ jobs:
       # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
 
-        if [[ -z $(git branch --list jaen-storage) ]]; then
-            echo "There is no jaen-storage"
-        else
-            # remove `jaen-storage` branch.
-            git branch -d jaen-storage 2>/dev/null 
-        fi
+        #if [[ -z $(git branch --list jaen-storage) ]]; then
+        #    echo "There is no jaen-storage"
+        #else
+        #    # remove `jaen-storage` branch.
+        #    git branch -d jaen-storage 2>/dev/null 
+        #fi
 
         # ensure we're on the `jaen-storage` branch.
         git checkout --orphan  jaen-storage
-        git branch --set-upstream-to=origin/jaen-storage jaen-storage
         
         git rm -rf .
         

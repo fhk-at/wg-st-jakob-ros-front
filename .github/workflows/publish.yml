@@ -62,6 +62,6 @@ jobs:
         git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
   
         # Git: add, commit, and push changes
-        git add dates.txt
+        git add jaen-data.json
         git commit -m "Update jaen-data.json"
         GIT_TRACE=1 git push -f --verbose origin jaen-storage

@@ -1,4 +1,12 @@
+// 6. Masks
+// ===========================================================================
+
 // Masks
+$mask-overlay-transition                     : all .4s ease-in-out !default;
+$mask-zoom-transition                        : all .2s linear !default;
+$mask-zoom-transform                         : scale(1.1) !default;
+$intro-video-transform                       : translateX(-50%) translateY(-50%) !default;
+$intro-video-transition                      : 1s !default;
 $mask-overlay-transition                     : all .4s ease-in-out !default;
 $mask-zoom-transition                        : all .2s linear !default;
 $mask-zoom-transform                         : scale(1.1) !default;

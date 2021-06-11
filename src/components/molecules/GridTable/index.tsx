@@ -37,7 +37,7 @@ import {
         ]
     }
   
-  const CMSTable = ({cmsData}: Props): JSX.Element => {
+  const GridTable = ({cmsData}: Props): JSX.Element => {
   
       console.log(cmsData)
   
@@ -75,7 +75,7 @@ import {
       )
     }
     
-    export default CMSTable
+    export default GridTable
   
   /**
    * SPDX-License-Identifier: (EUPL-1.2)

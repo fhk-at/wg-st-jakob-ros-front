@@ -5,7 +5,7 @@
 // "Material Design for Bootstrap" is a great UI design framework
 import {
   MDBContainer,
-  MDBNavbar,
+  //MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarToggler,
   MDBIcon,
@@ -18,8 +18,13 @@ import {
   // MDBDropdownMenu,
   // MDBDropdownItem,
   // MDBDropdownLink,
-  MDBCollapse
+  //MDBCollapse
 } from 'mdb-react-ui-kit';
+
+import {
+  MDBNavbar,
+  MDBCollapse
+} from "@components/legacy";
 
 import {useState} from 'react'
 
@@ -45,8 +50,8 @@ const Navbar = ({
     <>
       <MDBNavbar
         light
-        color="white"
-        fixed={true}
+        color="grey lighten-4"
+        fixed="top"
         expand="lg"
         scrolling
         transparent
@@ -66,7 +71,7 @@ const Navbar = ({
               <MDBIcon icon='bars' size='lg' />
             </MDBNavbarToggler>
           </div>
-          <MDBCollapse show={showNavbar} navbar>
+          <MDBCollapse isOpen={showNavbar} navbar>
             <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
               <MDBNavbarItem>
                 <MDBNavbarLink

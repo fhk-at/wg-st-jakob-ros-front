@@ -6,9 +6,7 @@ import {PrivacyPageContainer as PrivacyPage} from '@containers/PrivacyPage'
 import {CookieModal} from '@components/molecules'
 import {AdvancedFooter, NavbarHeader} from '@components/organisms'
 
-import '@common/css/colors.scss'
-import '@common/css/variables.scss'
-import '@common/css/layout.scss'
+import '@common/css/base.scss'
 
 import './_app.scss'
 

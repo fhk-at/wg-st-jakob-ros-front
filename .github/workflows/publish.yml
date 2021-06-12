@@ -25,6 +25,9 @@ jobs:
 
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
     - name: Configure GitHub authentication 🔧
+
+      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+      run: |
         # Git: set identity
         git config --global user.name "snekmin"
         git config --global user.email "noreply.snek.at@gmail.com"

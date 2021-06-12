@@ -65,14 +65,14 @@ jobs:
           # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
 
-          # Create jean-storage branch without history
+          # Create gh-pages branch without history
           git checkout --orphan gh-pages
 
           if [[ -z $(git ls-remote --heads origin gh-pages) ]]; then
             echo "There is no GitHub page deployed"
           else
             # Download remote gh-pages without history
-            curl -L https://github.com/${GITHUB_REPOSITORY}/archive/gh-pages.tar.gz | tar -xz
+            curl -L https://github.com/${GITHUB_REPOSITORY}/archive/gh-pages.tar.gz | tar -xz --strip-components=1
           fi
 
           # Create `jaen-data.json`

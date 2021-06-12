@@ -75,7 +75,7 @@ jobs:
           echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
 
           # Git: add, commit, and push changes
-          git add jaen-data.json
+          git add .
           git commit -m "Update jaen-data.json"
           GIT_TRACE=1 git push -f --verbose origin gh-pages
         fi

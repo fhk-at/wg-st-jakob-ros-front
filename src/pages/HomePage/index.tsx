@@ -1,9 +1,3 @@
-import {useEffect} from 'react'
-
-//import {CMSRichTextField, CMSTextField} from 'jaen-cms/lib/editable'
-
-import {RootState} from '@store/store'
-
 import "./index.scss"
 
 //> Components
@@ -19,31 +13,33 @@ import {
   MapSection,
 } from "@components/organisms";
 
-interface Props {
-  loadPage: (id: string) => void
-  id: string
-  name: string
-  pages: RootState['cms']['pages']
-}
+import {
+  ConnectedPageType,
+  // CMSProvider,
+  PageProvider,
+  TextField,
+  // IndexField
+} from '@snek-shipyard/jaen-cms'
 
-const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
-  useEffect(() => {
-    loadPage(id)
-  }, [])
-  const CMSPageId = `${id}_${name}`
-  const pageContent = pages[CMSPageId]?.serverContent
+import PrivacyPage from "../PrivacyPage";
 
-  console.log(pageContent)
+const HomePage: ConnectedPageType = ({slug}) => {
 
   return (
     <>
-      <HeroSection sectionData={{lol: ""}}/>
-      <IntroSection sectionData={{lol: ""}}/>
-      <ConnectSection sectionData={{lol: ""}}/>
-      <PurificationSection sectionData={{lol: ""}}/>
-      <AboutSection sectionData={{lol: ""}}/>
-      {/* <NewsSection sectionData={{lol: ""}}/> */}
-      <HistorySection sectionData={{lol: ""}}/>
+      <PageProvider typeName={HomePage.PageType} slug={slug}>
+        <HeroSection xlheading1 = {<TextField fieldOptions={{name: "heroxlheading1" }}/>}
+                     xlheading2 = {<TextField fieldOptions={{name: "heroxlheading2" }}/>}
+                     xlheading3 = {<TextField fieldOptions={{name: "heroxlheading3" }}/>}
+        />
+        <IntroSection sectionData={{lol: ""}}/>
+        <ConnectSection sectionData={{lol: ""}}/>
+        <PurificationSection sectionData={{lol: ""}}/>
+        <AboutSection sectionData={{lol: ""}}/>
+        {/* <NewsSection sectionData={{lol: ""}}/> */}
+        <HistorySection sectionData={{lol: ""}}/>
+      </PageProvider>
+
       <MapSection />
 
       {/* <div className="test-con container pt-5 mx-0">
@@ -82,5 +78,8 @@ const HomePage = ({pages, id, name, loadPage}: Props): JSX.Element => {
     </>
   )
 }
+
+HomePage.PageType = 'HomePage'
+HomePage.ChildPages = [PrivacyPage]
 
 export default HomePage

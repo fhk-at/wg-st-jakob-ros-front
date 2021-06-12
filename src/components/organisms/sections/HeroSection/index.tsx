@@ -32,11 +32,18 @@ import localImage from "../../../../common/img/content/bg/bg1.jpg";
 // Placeholder image
 import {ReactComponent as WgLogo} from "../../../../common/logo.svg";
 
+// import {
+//   TextField,
+// } from '@snek-shipyard/jaen-cms'
+import React from "react";
+
 interface Props {
-    sectionData: object
+    xlheading1: React.ReactNode
+    xlheading2: React.ReactNode
+    xlheading3: React.ReactNode
   }
 
-const HeroSection = ({sectionData}: Props): JSX.Element => {
+const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => {
     let loaded = false
     const data = {
       slideLoadimage: false,
@@ -46,7 +53,6 @@ const HeroSection = ({sectionData}: Props): JSX.Element => {
       slideButton: {
         buttonTitle: "Online Wasserleser"
       },
-      sectionData: sectionData,
     }
 
     if (data.slideImage) {
@@ -190,21 +196,21 @@ const HeroSection = ({sectionData}: Props): JSX.Element => {
                         duration={500}
                         delay="450ms"
                       >
-                        <h2>Frisch</h2>
+                        <h2>{xlheading1}</h2>
                       </MDBAnimation>
                       <MDBAnimation
                         type="fadeInUp"
                         duration={500}
                         delay="400ms"
                       >
-                        <h2>Sicher</h2>
+                        <h2>{xlheading2}</h2>
                       </MDBAnimation>
                       <MDBAnimation
                         type="fadeInUp"
                         duration={500}
                         delay="350ms"
                       >
-                        <h2>Zuverlässig</h2>
+                        <h2>{xlheading3}</h2>
                       </MDBAnimation>
                       <MDBAnimation
                         type="fadeInUp"

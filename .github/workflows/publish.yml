@@ -2,7 +2,7 @@
 name: Publish
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#on
-on: repository_dispatch
+on: [repository_dispatch]
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobs
 jobs:
@@ -18,50 +18,58 @@ jobs:
     
     # https://help.github.com/en/articles/virtual-environments-for-github-actions#default-environment-variables
     # https://github.com/actions/checkout
-    - uses: actions/checkout@v2
+    - name: Checkout 🛎️
+      uses: actions/checkout@v2.3.1
       with:
         path: '.'
-    
+
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
-    - name: Update dates.txt with new date
-
-      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsenv
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
-      run: |
-
-        #if [[ -z $(git branch --list jaen-storage) ]]; then
-        #    echo "There is no jaen-storage"
-        #else
-        #    # remove `jaen-storage` branch.
-        #    git branch -d jaen-storage 2>/dev/null 
-        #fi
-
-        # ensure we're on the `jaen-storage` branch.
-        git checkout --orphan  jaen-storage
-        
-        git rm -rf .
-        
-        # create or update `jaen-data.json`
-        touch jaen-data.json
-        
-        # append the current datetime to the end of `jaen-data.json`
-        echo '${{ toJson(github.event.client_payload) }}' >> jaen-data.json
-        
-        # reveal what `jaen-data.json` looks like in the logs
-        cat jaen-data.json
-        
+    - name: Configure GitHub authentication 🔧
         # Git: set identity
         git config --global user.name "snekmin"
         git config --global user.email "noreply.snek.at@gmail.com"
         
         # Git: set remote  
         # https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#http-based-git-access-by-an-installation
-        git remote set-url origin "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-  
+        git remote set-url origin "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
+
+    # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
+    - name: Update jaen-data.json
+      
+      # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+      run: |
+
+        # Ensure we're on the `jaen-storage` branch.
+        git checkout --orphan  jaen-storage
+        
+        git rm -rf .
+        
+        # Create `jaen-data.json`
+        echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
+        
+        # reveal what `jaen-data.json` looks like in the logs
+        cat jaen-data.json
+
         # Git: add, commit, and push changes
         git add jaen-data.json
         git commit -m "Update jaen-data.json"
         GIT_TRACE=1 git push -f --verbose origin jaen-storage
+
+    # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
+    - name: Deploy jean-data to Github Pages 🚀
+          # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
+      run: |
+
+        if [[ -z $(git branch --list jaen-storage) ]]; then
+          echo "There is no GitHub page deployed"
+        else
+          # Create `jaen-data.json`
+          echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
+
+          # Git: add, commit, and push changes
+          git add jaen-data.json
+          git commit -m "Update jaen-data.json"
+          GIT_TRACE=1 git push -f --verbose origin jaen-storage
+        fi
+
+

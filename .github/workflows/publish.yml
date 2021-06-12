@@ -46,6 +46,9 @@ jobs:
         # Create jean-storage branch without history
         git checkout --orphan jaen-storage
 
+        # Remove unnecessary files
+        git rm -rf .
+
         # Create `jaen-data.json`
         echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
 
@@ -67,6 +70,9 @@ jobs:
         else
           # Create jean-storage branch without history
           git checkout --orphan gh-pages
+          
+          # Download remote gh-pages without history
+          curl -L https://github.com/${GITHUB_REPOSITORY}/archive/gh-pages.tar.gz | tar -xz
 
           # Create `jaen-data.json`
           echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json

@@ -65,14 +65,15 @@ jobs:
           # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
 
-        if [[ -z $(git ls-remote --heads origin gh-pages) ]]; then
-          echo "There is no GitHub page deployed"
-        else
           # Create jean-storage branch without history
           git checkout --orphan gh-pages
-          
-          # Download remote gh-pages without history
-          curl -L https://github.com/${GITHUB_REPOSITORY}/archive/gh-pages.tar.gz | tar -xz
+
+          if [[ -z $(git ls-remote --heads origin gh-pages) ]]; then
+            echo "There is no GitHub page deployed"
+          else
+            # Download remote gh-pages without history
+            curl -L https://github.com/${GITHUB_REPOSITORY}/archive/gh-pages.tar.gz | tar -xz
+          fi
 
           # Create `jaen-data.json`
           echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
@@ -81,4 +82,4 @@ jobs:
           git add .
           git commit -m "Update jaen-data.json"
           GIT_TRACE=1 git push -f --verbose origin gh-pages
-        fi
+

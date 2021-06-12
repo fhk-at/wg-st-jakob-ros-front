@@ -43,9 +43,10 @@ jobs:
       # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
 
-        # Ensure we're on the `jaen-storage` branch.
+        # Create jean-storage branch without history
         git checkout --orphan jaen-storage
 
+        # Remove unnecessary files
         git rm -rf .
 
         # Create `jaen-data.json`
@@ -64,15 +65,17 @@ jobs:
           # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
 
-        git checkout --orphan gh-pages
+        if [[ -z $(git branch --list gh-pages) ]]; then
+          echo "There is no GitHub page deployed"
+        else
+          # Create jean-storage branch without history
+          git checkout --orphan gh-pages
 
-        # Create `jaen-data.json`
-        echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
+          # Create `jaen-data.json`
+          echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
 
-        # Git: add, commit, and push changes
-        git add jaen-data.json
-        git commit -m "Update jaen-data.json"
-        GIT_TRACE=1 git push -f --verbose origin gh-pages
-
-
-
+          # Git: add, commit, and push changes
+          git add jaen-data.json
+          git commit -m "Update jaen-data.json"
+          GIT_TRACE=1 git push -f --verbose origin gh-pages
+        fi

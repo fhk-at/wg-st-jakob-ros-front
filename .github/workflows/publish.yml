@@ -65,7 +65,7 @@ jobs:
           # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsrun
       run: |
 
-        if [[ -z $(git branch --list gh-pages) ]]; then
+        if [[ -z $(git ls-remote --heads origin gh-pages) ]]; then
           echo "There is no GitHub page deployed"
         else
           # Create jean-storage branch without history

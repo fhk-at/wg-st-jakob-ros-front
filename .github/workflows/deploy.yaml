@@ -16,4 +16,3 @@ jobs:
           npm install
           npm run deploy
           wget https://raw.githubusercontent.com/${GITHUB_REPOSITORY}/jaen-storage/jaen-data.json
-

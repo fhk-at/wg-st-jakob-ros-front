@@ -46,9 +46,6 @@ jobs:
         # Create jean-storage branch without history
         git checkout --orphan jaen-storage
 
-        # Remove unnecessary files
-        git rm -rf .
-
         # Create `jaen-data.json`
         echo '${{ toJson(github.event.client_payload) }}' > jaen-data.json
 

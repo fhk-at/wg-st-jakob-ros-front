@@ -111,3 +111,6 @@ drop-skeleton/src/mutations.gen.ts
 drop-skeleton/src/queries.gen.ts
 
 drop-skeleton/src/types.gen.ts
+
+# Ignore jaen cms data
+public/jaen-data.json

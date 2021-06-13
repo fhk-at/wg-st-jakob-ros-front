@@ -26,23 +26,19 @@ import "./index.scss";
 
 // Placeholder image
 
-
 interface Props {
-    sectionData: object
-  }
+  maincontent1: React.ReactNode
+  newsindex1: React.ReactNode
+}
 
-const NewsSection = ({sectionData}: Props): JSX.Element => {
-    let loaded = false
-  
-
-    console.log(loaded)
-    console.log(sectionData)
+const NewsSection = ({maincontent1, newsindex1}: Props): JSX.Element => {
 
     return (
-      <div className="map">
+      <div className="news">
         <MDBRow className="justify-content-center">
           <MDBCol md="6" className="mb-3 col-timeline">
-            lol
+            {maincontent1}
+            {newsindex1}
           </MDBCol>
         </MDBRow>
       </div>

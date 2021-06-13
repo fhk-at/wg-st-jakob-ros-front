@@ -41,9 +41,13 @@ interface Props {
     xlheading1: React.ReactNode
     xlheading2: React.ReactNode
     xlheading3: React.ReactNode
+    xlsubheading1: React.ReactNode
+    xlsubheading2: React.ReactNode
+    lgheading1: React.ReactNode
+    button1: React.ReactNode
   }
 
-const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => {
+const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubheading2, lgheading1, button1}: Props): JSX.Element => {
     let loaded = false
     const data = {
       slideLoadimage: false,
@@ -68,7 +72,6 @@ const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => 
                         <MDBAnimation className="loader-bg" type="rotateIn" duration={1000}>
                             <WgLogo  
                               style={{
-                                //backgroundColor: 'lightpink',
                                 resize: 'horizontal',
                                 width: '100%',
                                 height: 'auto',
@@ -100,22 +103,20 @@ const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => 
                       </svg>
                   <MDBAnimation className="d-xl-none" type="fadeInUp" duration={500} delay="400ms">
                     <div className="text-white">
-                      <h2 className="text-center font-weight-bold px-3">Für Sie unterwegs</h2>
+                      <h2 className="text-center font-weight-bold px-3">{lgheading1}</h2>
                     </div>
-                    {loaded && data.slideButton.buttonTitle && (
-                      <MDBAnimation
+                    <MDBAnimation
                         type="fadeInUp"
                         duration={500}
                         delay="500ms"
                       >
                         <Link to="shop" smooth={true} spy={true} duration={300}>
                           <MDBBtn color="white" size="lg" rounded>
-                            {data.slideButton.buttonTitle}
+                            {button1}
                             <MDBIcon icon="arrow-right" className="ps-3 fa-lg" />
                           </MDBBtn>
                         </Link>
                       </MDBAnimation>
-                    )}
                   </MDBAnimation>
                 </MDBAnimation>
           </Parallax>
@@ -127,7 +128,6 @@ const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => 
                   <MDBAnimation className="loader-bg" type="rotateIn" duration={1000}>
                       <WgLogo  
                         style={{
-                          //backgroundColor: 'lightpink',
                           resize: 'horizontal',
                           width: '100%',
                           height: 'auto',
@@ -217,14 +217,14 @@ const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => 
                         duration={500}
                         delay="300ms"
                       >
-                        <span className="pt-2">Wassergenossenschaft</span>
+                        <h3 className="pt-2">{xlsubheading1}</h3>
                       </MDBAnimation>
                       <MDBAnimation
                         type="fadeInUp"
                         duration={500}
                         delay="200ms"
                       >
-                        <span>St. Jakob i. Ros.</span>
+                        <h3>{xlsubheading2}</h3>
                       </MDBAnimation>
                       {loaded && data.slideButton.buttonTitle && (
                         <MDBAnimation
@@ -240,7 +240,7 @@ const HeroSection = ({xlheading1,xlheading2,xlheading3}: Props): JSX.Element => 
                             offset={-150}
                           >
                             <MDBBtn color="white"  size="lg" rounded>
-                              {data.slideButton.buttonTitle}
+                              {button1}
                               <MDBIcon
                                 icon="arrow-right"
                                 className="ps-2 fa-lg"

@@ -27,12 +27,15 @@ $green: #01ad79;
   letter-spacing: 0.04em;
 }
 
+.navbar {
+  z-index: 1009 !important;
+}
+
 @media only screen and (max-width: 1440px) {
   .navbar {
     box-shadow: none !important;
     background-color: #f7f7f7;
-    z-index: 1009;
-  
+
     .navbar-nav {
       margin-right: 1em;
       font-size: larger;

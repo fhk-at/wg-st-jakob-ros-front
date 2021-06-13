@@ -59,15 +59,15 @@ $mask-path: "../../../../common/img/sections" !default;
       color: rgb(28, 77, 182);
       display: flex;
       align-items: center;
-  
+
       .parallax-inner {
         position: relative;
         z-index: 1;
       }
 
       @media only screen and (min-width: 1050px) {
-        h2 {
-          font-size: 4.5em;
+        h2  {
+          font-size: 3.8em;
         }
       }
 
@@ -77,32 +77,24 @@ $mask-path: "../../../../common/img/sections" !default;
         }
       }
 
-      h2 {
+      h2{
+        color: #1c4db6;
+        visibility: visible;
+        box-sizing: border-box;
         line-height: 1.1em;
-        letter-spacing: 0.01em;
         text-transform: uppercase;
         margin: 0;
         font-weight: bold;
         letter-spacing: 0.04em;
       }
   
-      span {
+      h3 {
         display: block;
         color: rgb(0, 0, 0);
         //font-size: 1.8em;
         text-transform: uppercase;
         line-height: 1em;
         letter-spacing: 0.02em;
-      }
-  
-      .btn {
-        margin-left: 0;
-        letter-spacing: 0.2em;
-        padding-left: 2em;
-        padding-right: 2em;
-        margin-top: 2em;
-        //border-radius: 40px;
-        line-height: 1.8em;
       }
     }
   

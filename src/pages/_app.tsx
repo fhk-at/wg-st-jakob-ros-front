@@ -2,6 +2,7 @@ import {CMSProvider} from '@snek-shipyard/jaen-cms'
 
 import HomePage from './HomePage'
 import NewsPage from './NewsPage'
+import MeteringPage from './MeteringPage'
 import PrivacyPage from './PrivacyPage'
 
 import {CookieModal} from '@components/molecules'
@@ -16,6 +17,7 @@ const App = (): JSX.Element => {
     <div className="App">
       
       <CMSProvider settings={{gitRemote: "fhk-at/wg-st-jakob-ros-front"}} pages={[HomePage, NewsPage, PrivacyPage]}>
+        <MeteringPage slug="private"/>
         <NavbarHeader />
         <CookieModal />
         <AdvancedFooter

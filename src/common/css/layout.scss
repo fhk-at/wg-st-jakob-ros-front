@@ -27,7 +27,9 @@ body {
       text-align: center !important;
   }
 }
-
+*:focus{
+  display: none;
+}
 h1{
   font-weight: 400 !important;
 }

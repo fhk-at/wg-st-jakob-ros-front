@@ -13,26 +13,27 @@ import {
 } from '@snek-shipyard/jaen-cms'
 
 import "./index.scss"
+import {EmailForm} from '@components/molecules'
 
 
 
 
-
-const NewsPage: ConnectedPageType = ({slug}) => {
+const MeteringPage: ConnectedPageType = ({slug}) => {
   return (
     <>
-      <PageProvider typeName={NewsPage.PageType} slug={slug}>
+      <PageProvider typeName={MeteringPage.PageType} slug={slug}>
         <MDBContainer id="message" className="py-5 my-5">
           <section>
-            <RichTextField fieldOptions={{fieldName: "newsmaincontent1"}}/>
+            <RichTextField fieldOptions={{fieldName: "meteringmaincontent1"}}/>
           </section>
+          <EmailForm/>
         </MDBContainer>
       </PageProvider>
     </>
   )
 }
 
-NewsPage.PageType = 'NewsPage'
-NewsPage.ChildPages = []
+MeteringPage.PageType = 'MeteringPage'
+MeteringPage.ChildPages = []
 
-export default NewsPage
+export default MeteringPage

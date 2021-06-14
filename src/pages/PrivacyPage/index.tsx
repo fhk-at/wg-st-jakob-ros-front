@@ -53,7 +53,7 @@ const PrivacyPage: ConnectedPageType = ({slug}) => {
         />
         <MDBContainer id="message" className="py-5 my-5">
         <section>
-              <RichTextField fieldOptions={{name: "privacymaincontent1"}}/>
+              <RichTextField fieldOptions={{fieldName: "privacymaincontent1"}}/>
 
             </section>
             <div className="text-left">

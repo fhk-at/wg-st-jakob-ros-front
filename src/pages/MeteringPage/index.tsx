@@ -13,7 +13,7 @@ import {
   } from '@snek-shipyard/jaen-cms'
   
   import "./index.scss"
-  import {EmailForm} from '@components/molecules'
+  import {MeteringForm as EmailForm} from '@components/molecules'
   import {AdvancedFooter, NavbarHeader} from '@components/organisms'
   
   

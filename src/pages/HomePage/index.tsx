@@ -67,7 +67,7 @@ const HomePage: ConnectedPageType = ({slug}) => {
         />
         <EmergencySection maincontent1 = {<RichTextField fieldOptions={{fieldName: "emergencymaincontent1" }}/>}
                         contacttable1 = {Array.apply([], Array(1)).map((row, index1) => {
-                        row = Array.apply(null, Array(3)).map((_, index2) => 
+                        row = Array.apply(null, Array(2)).map((_, index2) => 
                           <RichTextField fieldOptions={{fieldName: index1.toString() + "contactcell" + index2.toString()}}/>
                         );
                         return row as JSX.Element[]

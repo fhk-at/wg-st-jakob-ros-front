@@ -51,7 +51,7 @@ h5{
   letter-spacing: 0.2em;
   padding-left: 2em;
   padding-right: 2em;
-  margin-top: 2em;
+  margin-top: 1.5em;
   //border-radius: 40px;
   line-height: 1.8em;
 }
@@ -80,6 +80,10 @@ h5{
 }
 
 .DraftEditor-root{
+  h1 div{
+    text-align: center;
+    // font-size: 2.6rem;
+  }
   h2{
     div{
       display: inline-block;
@@ -126,9 +130,76 @@ h5{
       content: "";
     }
   }
-  h2:nth-of-type(1){
-    &::before{
-      margin: 0 0 3rem 0;
+  // h2:nth-of-type(1){
+  //   &::before{
+  //     margin: 0 0 3rem 0;
+  //   }
+  // }
+}
+
+.ant-drawer{
+  // position: fixed;
+  z-index: 9000;
+  // width: 0%;
+  // height: 100%;
+  // transition: transform 0.3s cubic-bezier(0.7, 0.3, 0.1, 1), height 0s ease 0.3s, width 0s ease 0.3s;
+}
+
+.ant-notification{
+  z-index: 9010;
+}
+
+table.key-data{
+  width:100%;
+  border-spacing:2em;
+  border-collapse:separate;
+  font-size:.9em
+}
+@media screen and (max-width: 1050px){
+    table.key-data{
+        font-size:inherit;
+        margin-top:2em
     }
-  }
+    table.key-data tr{
+        display:block
+    }
+}
+table.key-data td{
+    
+    border-right:1px dotted #002846;
+    padding-right:2em;
+    width:25%;
+    vertical-align:top;
+    .public-DraftStyleDefault-ltr {
+      text-align:center;
+    }
+}
+@media screen and (max-width: 1050px){
+    table.key-data td{
+        display:block;
+        width:100%;
+        border-bottom:1px dotted #002846;
+        border-right:0;
+        padding:1em 2em
+    }
+}
+table.key-data td h1,table.key-data td p{
+    margin-bottom:0;
+    text-transform:none,
+}
+table.key-data td p{
+    line-height:135%
+}
+table.key-data td:last-child{
+    border-right:0;
+    padding-right:0
+}
+@media screen and (max-width: 1050px){
+    table.key-data td:last-child{
+        border-bottom:1px dotted #002846;
+        padding:1em 2em
+    }
+}
+table.key-data em{
+    font-size:.6em
 }

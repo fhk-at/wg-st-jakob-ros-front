@@ -1,12 +1,19 @@
 import {
   MDBFooter,
-  // MDBContainer,
+  //MDBContainer,
   // MDBIcon,
 } from 'mdb-react-ui-kit'
 
 // import React from 'react'
 
 import './index.scss'
+
+//import EmailField from '@components/molecules/EmailForm'
+//import { Link, /*scroller*/} from "react-scroll";
+import {useHistory} from 'react-router'
+import {useCMSContext} from '@snek-shipyard/jaen-cms/lib/contexts/context'
+import pickBy from 'lodash/pickBy'
+
 
 interface Props {
   copyrightText: string
@@ -74,13 +81,33 @@ interface Props {
 const AdvancedFooter = ({ copyrightText, copyrightUrl }: Props) => {
   console.log(copyrightText)
   console.log(copyrightUrl)
+  const history = useHistory()
+  const cmsContext = useCMSContext()
+  //const pageContext = useCMSPageContext()
+
+  const getKeyFromSlug = (slug: string) => {
+    const refs = cmsContext.keyRefs?.indexKey
+    
+    return Object.keys(pickBy(refs, page => page.slug === slug))[0] || ''
+  }
+
+    const navHandler = (slug: string, /*position: string, offset: number*/) => {
+
+    history.push(getKeyFromSlug(slug))
+    //scroller.scrollTo(position, offset)
+  }
 
   return (
     
-  <MDBFooter backgroundColor='light' className='text-lg-start text-muted'>
-    <div className="sitemap"></div>
+  <MDBFooter backgroundColor='light' className='text-lg-start text-muted border-top'>
+    {/* <div className="sitemap"></div> */}
+
+    {/* <MDBContainer className="p-4">
+      <EmailField/>
+    </MDBContainer> */}
+
     <section
-      className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      className="d-flex d-none justify-content-center justify-content-lg-between p-4 border-bottom"
     >
       
       <div className="me-5 d-none d-lg-block">
@@ -122,11 +149,10 @@ const AdvancedFooter = ({ copyrightText, copyrightUrl }: Props) => {
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             
             <h6 className="text-uppercase fw-bold mb-4">
-              <i className="fas fa-gem me-3"></i>Company name
+              WG ST. JAKOB I. ROS.
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+            Zweck der Genossenschaft ist die Wasserversorgung der genossenschaftlichen Grundstücke und Anlagen.
             </p>
           </div>
           
@@ -139,19 +165,16 @@ const AdvancedFooter = ({ copyrightText, copyrightUrl }: Props) => {
           <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
             
             <h6 className="text-uppercase fw-bold mb-4">
-              Useful links
+              Nützliche Links
             </h6>
             <p>
-              <a href="#!" className="text-reset">Online Wasserleser</a>
+              <a onClick={() => navHandler("online-wasserleser", /*"about", 300*/)} className="text-reset">Online Wasserleser</a>
             </p>
             <p>
-              <a href="#!" className="text-reset">Datenschutzerklärung</a>
+              <a onClick={() => navHandler("datenschutz", /*"about", 300*/)} className="text-reset">Datenschutzerklärung</a>
             </p>
             <p>
-              <a href="#!" className="text-reset">Impressum</a>
-            </p>
-            <p>
-              <a href="#!" className="text-reset">Hilfe</a>
+              <a onClick={() => navHandler("kontakt", /*"about", 300*/)} className="text-reset">Impressum</a>
             </p>
           </div>
           

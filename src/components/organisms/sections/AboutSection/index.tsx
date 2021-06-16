@@ -14,10 +14,10 @@ import {
   MDBCol,
   // MDBBtn,
   // MDBIcon,
+  //MDBTableBody,
   MDBContainer
 } from 'mdb-react-ui-kit';
 
-import {GridTable} from '@components/molecules'
 
 // import {
 //   MDBView,
@@ -40,58 +40,62 @@ import "./index.scss";
 
 interface Props {
   maincontent1: React.ReactNode
+  maincontent2: React.ReactNode
+  statisticstable1: JSX.Element[][]
+  contacttable1: JSX.Element[][]
 }
 
-const AboutSection = ({maincontent1}: Props): JSX.Element => {
+const AboutSection = ({maincontent1, maincontent2, statisticstable1, contacttable1}: Props): JSX.Element => {
 
     return (
       <div className="about">
         <MDBContainer className="p-5">
           <MDBRow className="justify-content-center">
-            <MDBCol md="9" className="mb-3 col-about">
+            <MDBCol md="9" className="mb-0 col-about">
               <p>{maincontent1}</p>
-              <p>
-                <GridTable cmsData={[["<h3>1.320</h3><p>Ständig versorgte Einwohner</p>","<h3>470</h3><p>Wasserabnehmer bzw. Mitglieder</p>", "<h3>550 <i>m³</i></h3><p>Mittlerer Wasserbedarf pro Tag</p>", "<h3>100.000 <i>m³</i></h3><p>Mittlerer Wasserbedarf pro Jahr</p>"],["<h3>750 <i>m³</i></h3><p>Speicherkapazität aller Hochbehälter</p>","<h3>220 <i>m³</i></h3><p>Löschwasserreserve</p>","<h3>15 <i>km</i></h3><p>Versorgungsnetz (ohne Hausanschlussleitungen)</p>","<h3>285.000 <i>kWh</i></h3><p>Jährlicher Stromertrag aus dem Trinkwasser­kraftwerk: pro Jahr</p>"]]}/>
-              </p>
-              {/* <table border="0" cellpadding="0" cellspacing="0" class="key-data">
-                <tbody>
-                  <tr>
-                    <td>
-                      <h1>1.320</h1>
-                      <p>Ständig versorgte Einwohner</p>
-                      </td>
-                      <td>
-                        <h1>470</h1>
-                        <p>Wasserabnehmer bzw. Mitglieder</p>
-                      </td>
-                      <td><h1>550 <em>m³</em></h1>
-                      <p>Mittlerer Wasserbedarf pro Tag</p>
-                      </td>
-                      <td>
-                        <h1>100.000 <em>m³</em></h1>
-                        <p>Mittlerer Wasserbedarf pro Jahr</p>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><h1>750 <em>m³</em></h1>
-                      <p>Speicherkapazität aller Hochbehälter</p>
-                    </td>
-                    <td>
-                      <h1>220 
-                        <em>m³
-                          </em>
-                          </h1>
-                          <p>Löschwasserreserve</p>
-                          </td>
-                          <td
-                          ><h1>15 
-                            <em>km</em>
-                            </h1><p>Versorgungsnetz (ohne Hausanschlussleitungen)</p></td><td><h1>285.000 <em>kWh</em></h1><p>Jährlicher Stromertrag aus dem Trinkwasser­kraftwerk: pro Jahr</p></td></tr></tbody></table>
-
- */}
             </MDBCol>
           </MDBRow>
-          
+          <MDBRow className="justify-content-center">
+            <MDBCol md="10" className="mb-0 col-about">
+              <table className="key-data">
+                <tbody>
+                  { statisticstable1.map((row) => 
+                      <tr>
+                        {row.map((cell) =>
+                          <td>
+                            {cell}
+                          </td>
+                        )}
+                      </tr>
+                    )
+                  }
+                </tbody>
+              </table>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow className="justify-content-center">
+            <MDBCol md="9" className="mb-0 col-about">
+              <p>{maincontent2}</p>
+            </MDBCol>
+          </MDBRow>
+          <MDBRow className="justify-content-center">
+            <MDBCol md="10" className="mb-0 col-about">
+              <table className="key-data">
+                <tbody>
+                  { contacttable1.map((row) => 
+                      <tr>
+                        {row.map((cell) =>
+                          <td>
+                            {cell}
+                          </td>
+                        )}
+                      </tr>
+                    )
+                  }
+                </tbody>
+              </table>
+            </MDBCol>
+          </MDBRow>
         </MDBContainer>
       </div>
     )

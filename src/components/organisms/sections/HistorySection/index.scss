@@ -2,6 +2,26 @@ $image-path: "../../../../common/img/" !default;
 
 .history{
   border-bottom: 4px solid #0f52ba;
+
+  .th-history{
+    background-color: aqua;
+  }
+  .col-timeline{
+    .ant-row{
+      height: 90vh;
+      z-index: 900;
+      .ant-btn-primary{
+        background: #77bb21;
+        border-color: #77bb21;
+      }
+    }
+    .ant-col{
+      width: 90%;
+    }
+    position: relative;
+    overflow-y: auto;
+  }
+  
   //border-right: 4px solid #0f52ba;
   //border-left: 4px solid #0f52ba;
   //background-color: #f5f5f5;

@@ -1,9 +1,6 @@
 $image-path: "../../../../common/img/" !default;
 
 .connect{
-
-}  
-.connect{
   border-bottom: 4px solid #0f52ba;
   //border-right: 4px solid #0f52ba;
   border-left: 4px solid #0f52ba;
@@ -30,10 +27,11 @@ $image-path: "../../../../common/img/" !default;
         //background-image: url("#{$image-path}/content/water/drop.png");
         background-size: 4em;
         background-position: center;
-        content: "0.";
+        content: "";
       }
     }
-  
+  }
+  .col-connect-1{
     h2:nth-of-type(1) span{
       span::before{
         content: "1.";
@@ -59,29 +57,36 @@ $image-path: "../../../../common/img/" !default;
         content: "5.";
       }
     }
-    h2:nth-of-type(6) span{
+  }
+
+  .col-connect-2{
+    h2:nth-of-type(1) span{
+      span::before{
+        content: "3.";
+      }
+    }
+    h2:nth-of-type(2) span{
+      span::before{
+        content: "4.";
+      }
+    }
+    h2:nth-of-type(3) span{
+      span::before{
+        content: "5.";
+      }
+    }
+    h2:nth-of-type(4) span{
       span::before{
         content: "6.";
       }
     }
-    h2:nth-of-type(7) span{
+    h2:nth-of-type(5) span{
       span::before{
         content: "7.";
       }
     }
-    h2:nth-of-type(8) span{
-      span::before{
-        content: "8.";
-      }
-    }
-    h2:nth-of-type(9) span{
-      span::before{
-        content: "9.";
-      }
-    }
   }
 }
-
 
   /**
    * SPDX-License-Identifier: (EUPL-1.2)

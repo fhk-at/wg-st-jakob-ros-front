@@ -21,6 +21,11 @@ import {
   //MDBCollapse
 } from 'mdb-react-ui-kit';
 
+import { Link, /*scroller*/} from "react-scroll";
+import {useHistory} from 'react-router'
+import {useCMSContext} from '@snek-shipyard/jaen-cms/lib/contexts/context'
+import pickBy from 'lodash/pickBy'
+
 import {
   MDBNavbar,
   MDBCollapse
@@ -36,16 +41,38 @@ interface Props {
   logoUrl?: string
   logoAlt?: string
   showMenu?: boolean
+  // navindex1: React.ReactNode
 }
 
 const Navbar = ({
   logoUrl = Logo,
-  logoAlt = 'tuwien club'
-}: Props) => {
-
+  logoAlt = 'tuwien club',
+  // navindex1
+}: Props): JSX.Element => {
   const [showNavbar, setShowNavbar] = useState(false);
-  //const activePath = window.location.pathname
   
+  const history = useHistory()
+  const cmsContext = useCMSContext()
+  //const pageContext = useCMSPageContext()
+
+  const getKeyFromSlug = (slug: string) => {
+    const refs = cmsContext.keyRefs?.indexKey
+    
+    
+    
+    return Object.keys(pickBy(refs, page => page.slug === slug))[0] || ''
+  }
+
+  const navHandler = (slug: string, /*position: string, offset: number*/) => {
+
+    setShowNavbar(false)
+    history.push(getKeyFromSlug(slug))
+    //scroller.scrollTo(position, offset)
+  }
+
+
+
+
   return (
     <>
       <MDBNavbar
@@ -74,41 +101,48 @@ const Navbar = ({
           <MDBCollapse isOpen={showNavbar} navbar>
             <MDBNavbarNav right fullWidth={false} className='mb-2 mb-lg-0'>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="#"
-                  onClick={() => setShowNavbar(!showNavbar)}
-                >
+                <Link onClick={() => navHandler("home", /*"about", 300*/)} 
+                      data-test="nav-link"
+                      className="nav-link"
+                      to="about"
+                      offset={-90}
+                      smooth={true}
+                      spy={true}
+                      duration={300}>  
                   Über uns
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="#me"
-                  onClick={() => setShowNavbar(!showNavbar)}
-                >
+                <Link onClick={() => navHandler("home", /*"about", 300*/)}
+                      data-test="nav-link"
+                      className="nav-link"
+                      to="connect"
+                      offset={-90}
+                      smooth={true}
+                      spy={true}
+                      duration={300}
+                >  
                   Wasseranschluss
-                </MDBNavbarLink>
+                </Link>
+              </MDBNavbarItem>
+              {/* {navindex1} */}
+              <MDBNavbarItem>
+                <Link onClick={() => navHandler("home", /*"about", 300*/)}
+                      data-test="nav-link"
+                      className="nav-link"
+                      to="emergency"
+                >  
+                  Notfall
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="#products"
-                  onClick={() => setShowNavbar(!showNavbar)}
-                >
-                  Wasser
-                </MDBNavbarLink>
-              </MDBNavbarItem>
-              <MDBNavbarItem>
-                <MDBNavbarLink
-                  href="#products"
-                  onClick={() => setShowNavbar(!showNavbar)}
-                >
+                <Link onClick={() => navHandler("home", /*"about", 300*/)} data-test="nav-link" className="nav-link" to="col-connect-2" offset={-200} smooth={true} spy={true} duration={300}>  
                   Kosten
-                </MDBNavbarLink>
+                </Link>
               </MDBNavbarItem>
               <MDBNavbarItem>
                 <MDBNavbarLink
-                  href="#products"
-                  onClick={() => setShowNavbar(!showNavbar)}
+                  onClick={() => navHandler("online-wasserleser", /*"about", 300*/)}
                 >
                   Wasserzähler
                 </MDBNavbarLink>
@@ -116,7 +150,7 @@ const Navbar = ({
               <MDBNavbarItem>
                 <MDBNavbarLink
                   href="#products"
-                  onClick={() => setShowNavbar(!showNavbar)}
+                  onClick={() => navHandler("kontakt", /*"about", 300*/)}
                 >
                   Kontakt
                 </MDBNavbarLink>

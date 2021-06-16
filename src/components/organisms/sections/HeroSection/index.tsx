@@ -22,6 +22,10 @@ import {
   MDBAnimation
 } from "../../../legacy";
 
+import {useHistory} from 'react-router'
+import {useCMSContext} from '@snek-shipyard/jaen-cms/lib/contexts/context'
+import pickBy from 'lodash/pickBy'
+
 //> CSS
 import "./index.scss";
 
@@ -48,6 +52,24 @@ interface Props {
   }
 
 const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubheading2, lgheading1, button1}: Props): JSX.Element => {
+  const history = useHistory()
+  const cmsContext = useCMSContext()
+  //const pageContext = useCMSPageContext()
+
+  const getKeyFromSlug = (slug: string) => {
+    const refs = cmsContext.keyRefs?.indexKey
+    
+    
+    
+    return Object.keys(pickBy(refs, page => page.slug === slug))[0] || ''
+  }
+
+  const navHandler = (slug: string, /*position: string, offset: number*/) => {
+
+    history.push(getKeyFromSlug(slug))
+    //scroller.scrollTo(position, offset)
+  }
+  
     let loaded = false
     const data = {
       slideLoadimage: false,
@@ -103,7 +125,7 @@ const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubhe
                       </svg>
                   <MDBAnimation className="d-xl-none" type="fadeInUp" duration={500} delay="400ms">
                     <div className="text-white">
-                      <h2 className="text-center font-weight-bold px-3">{lgheading1}</h2>
+                      <h2 className="text-center text-white font-weight-bold px-3">{lgheading1}</h2>
                     </div>
                     <MDBAnimation
                         type="fadeInUp"
@@ -111,7 +133,7 @@ const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubhe
                         delay="500ms"
                       >
                         <Link to="shop" smooth={true} spy={true} duration={300}>
-                          <MDBBtn color="white" size="lg" rounded>
+                          <MDBBtn color="white" size="lg" rounded onClick={() => navHandler("online-wasserleser", /*"about", 300*/)}>
                             {button1}
                             <MDBIcon icon="arrow-right" className="ps-3 fa-lg" />
                           </MDBBtn>

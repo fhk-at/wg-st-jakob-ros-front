@@ -11,6 +11,7 @@ import {
   // TextField,
   RichTextField,
 } from '@snek-shipyard/jaen-cms'
+import {AdvancedFooter, NavbarHeader} from '@components/organisms'
 
 import "./index.scss"
 
@@ -22,11 +23,16 @@ const NewsPage: ConnectedPageType = ({slug}) => {
   return (
     <>
       <PageProvider typeName={NewsPage.PageType} slug={slug}>
+        <NavbarHeader/>
         <MDBContainer id="message" className="py-5 my-5">
           <section>
-            <RichTextField fieldOptions={{name: "newsmaincontent1"}}/>
+            <RichTextField fieldOptions={{fieldName: "newsmaincontent1"}}/>
           </section>
         </MDBContainer>
+        <AdvancedFooter
+          copyrightText={'CC'}
+          copyrightUrl={'mailto:admin@tuwien.club'}
+        />
       </PageProvider>
     </>
   )

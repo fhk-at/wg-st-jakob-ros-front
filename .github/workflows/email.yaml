@@ -30,9 +30,9 @@ jobs:
 
         # Git: set remote  
         # https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#http-based-git-access-by-an-installation
-        git remote set-url origin "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
+        #git remote set-url origin "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
 
-        echo ${github.event.client_payload.form_first_name}
+        #echo ${github.event.client_payload.form_first_name}
 
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
     - name: Send mail

@@ -2,7 +2,9 @@
 name: Publish
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#on
-on: [repository_dispatch]
+on:
+  repository_dispatch:
+    types: [update-jaen-data]
 
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobs
 jobs:

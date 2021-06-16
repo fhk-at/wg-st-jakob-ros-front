@@ -30,18 +30,18 @@ jobs:
 
         # Git: set remote  
         # https://developer.github.com/apps/building-github-apps/authenticating-with-github-apps/#http-based-git-access-by-an-installation
-        #git remote set-url origin "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
+        git remote set-url origin "https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/${GITHUB_REPOSITORY}.git"
 
-        #echo ${github.event.client_payload.form_first_name}
+        echo ${github.event.client_payload.form_first_name}
 
     # https://help.github.com/en/articles/workflow-syntax-for-github-actions#jobsjob_idstepsid
     - name: Send mail
       uses: dawidd6/action-send-mail@v3
       with:
         # Required mail server address:
-        server_address: smtp.gmail.com
+        server_address: smtp.office365.com
         # Required mail server port:
-        server_port: 465
+        server_port: 587
         # Required mail server username:
         username: ${{secrets.MAIL_USERNAME}}
         # Required mail server password:
@@ -49,7 +49,7 @@ jobs:
         # Required mail subject:
         subject: Github Actions job result
         # Required recipients' addresses:
-        to: obiwan@example.com,yoda@example.com
+        to: kleberbaum@erebos.xyz,admin@ts3.party
         # Required sender full name (address can be skipped):
         from: Luke Skywalker # <user@example.com>
         # Optional whether this connection use TLS (default is true if server_port is 465)
@@ -57,16 +57,16 @@ jobs:
         # Optional plain body:
         body: ${{ toJson(github.event.client_payload) }}
         # Optional HTML body read from file:
-        html_body: file://README.html
+        #html_body: file://README.html
         # Optional carbon copy recipients:
-        cc: kyloren@example.com,leia@example.com
+        #cc: kyloren@example.com,leia@example.com
         # Optional blind carbon copy recipients:
-        bcc: r2d2@example.com,hansolo@example.com
+        #bcc: r2d2@example.com,hansolo@example.com
         # Optional recipient of the email response:
         reply_to: luke@example.com
         # Optional unsigned/invalid certificates allowance:
         ignore_cert: true
         # Optional converting Markdown to HTML (set content_type to text/html too):
-        convert_markdown: true
+        #convert_markdown: true
         # Optional attachments:
-        attachments: attachments.zip,git.diff,./dist/static/main.js
+        #attachments: attachments.zip,git.diff,./dist/static/main.js

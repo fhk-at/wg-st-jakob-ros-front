@@ -222,7 +222,7 @@ const AdvancedFooter = ({ copyrightText, copyrightUrl }: Props) => {
     
     <div className="text-center p-4">
       © 2021 Copyright:
-      <a className="text-reset fw-bold" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      <a className="text-reset fw-bold" href="mailto:kleberbaum@erebos.xyz">Florian Kleber</a>
     </div>
     
   </MDBFooter>

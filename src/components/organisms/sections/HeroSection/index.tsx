@@ -58,9 +58,7 @@ const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubhe
 
   const getKeyFromSlug = (slug: string) => {
     const refs = cmsContext.keyRefs?.indexKey
-    
-    
-    
+
     return Object.keys(pickBy(refs, page => page.slug === slug))[0] || ''
   }
 
@@ -132,12 +130,19 @@ const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubhe
                         duration={500}
                         delay="500ms"
                       >
-                        <Link to="shop" smooth={true} spy={true} duration={300}>
-                          <MDBBtn color="white" size="lg" rounded onClick={() => navHandler("online-wasserleser", /*"about", 300*/)}>
-                            {button1}
-                            <MDBIcon icon="arrow-right" className="ps-3 fa-lg" />
-                          </MDBBtn>
-                        </Link>
+                          <Link
+                            onClick={() => navHandler("online-wasserleser", /*"about", 300*/)}
+                            to="shop"
+                            smooth={true}
+                            spy={true}
+                            duration={300}
+                            offset={-150}
+                          >
+                            <MDBBtn color="white" size="lg" rounded >
+                              {button1}
+                              <MDBIcon icon="arrow-right" className="ps-3 fa-lg" />
+                            </MDBBtn>
+                          </Link>
                       </MDBAnimation>
                   </MDBAnimation>
                 </MDBAnimation>
@@ -255,18 +260,16 @@ const HeroSection = ({xlheading1, xlheading2, xlheading3, xlsubheading1, xlsubhe
                           delay="100ms"
                         >
                           <Link
+                            onClick={() => navHandler("online-wasserleser", /*"about", 300*/)}
                             to="shop"
                             smooth={true}
                             spy={true}
                             duration={300}
                             offset={-150}
                           >
-                            <MDBBtn color="white"  size="lg" rounded>
+                            <MDBBtn color="white" size="lg" rounded >
                               {button1}
-                              <MDBIcon
-                                icon="arrow-right"
-                                className="ps-2 fa-lg"
-                              />
+                              <MDBIcon icon="arrow-right" className="ps-3 fa-lg" />
                             </MDBBtn>
                           </Link>
                         </MDBAnimation>

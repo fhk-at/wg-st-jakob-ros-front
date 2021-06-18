@@ -18,7 +18,6 @@ import {
   MDBModalBody,
   MDBModalFooter,
   MDBIcon,
-  MDBInputGroup,
 } from 'mdb-react-ui-kit';
 
 //#regin > Common
@@ -94,7 +93,7 @@ const CookieModal = () => {
                   Details anzeigen
                   </Link>
               </p>
-              <div className="my-4">
+              <div className="d-flex justify-content-center my-4">
                   <div className="custom-control custom-checkbox">
                   <input
                       type="checkbox"
@@ -103,12 +102,11 @@ const CookieModal = () => {
                       checked={essentialCookie}
                       disabled
                   />
-                  <label className="custom-control-label" htmlFor="essentialCookie">
+                  <label className="m-2 custom-control-label" htmlFor="essentialCookie">
                       Essenziell
                   </label>
                   </div>
-                  <MDBInputGroup className="d-flex justify-content-center mt-2">
-                  <div className="custom-control custom-checkbox mr-3">
+                  <div className="m-2 custom-control custom-checkbox mr-3">
                       <input
                       type="checkbox"
                       className="custom-control-input"
@@ -124,7 +122,7 @@ const CookieModal = () => {
                       Marketing
                       </label>
                   </div>
-                  <div className="custom-control custom-checkbox">
+                  <div className="m-2 custom-control custom-checkbox">
                       <input
                       type="checkbox"
                       className="custom-control-input"
@@ -140,7 +138,6 @@ const CookieModal = () => {
                       Statistiken
                       </label>
                   </div>
-                  </MDBInputGroup>
               </div>
             </MDBModalBody>
             <MDBModalFooter>

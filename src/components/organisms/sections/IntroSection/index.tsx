@@ -39,6 +39,11 @@ import Hand from "@common/img/content/water/hand.png";
 import Hydrant from "@common/img/content/water/hydrant.png";
 import Quality from "@common/img/content/water/quality.png";
 
+import { Link, /*scroller*/} from "react-scroll";
+import {useHistory} from 'react-router'
+import {useCMSContext} from '@snek-shipyard/jaen-cms/lib/contexts/context'
+import pickBy from 'lodash/pickBy'
+
 interface Props {
     maincontent1: React.ReactNode
     columnheading1: React.ReactNode
@@ -51,6 +56,20 @@ interface Props {
   }
 
 const IntroSection = ({maincontent1, columnheading1, columnheading2, columnheading3, columncontent1, columncontent2, columncontent3, button1}: Props): JSX.Element => {
+  const history = useHistory()
+  const cmsContext = useCMSContext()
+  //const pageContext = useCMSPageContext()
+
+  const getKeyFromSlug = (slug: string) => {
+    const refs = cmsContext.keyRefs?.indexKey
+    return Object.keys(pickBy(refs, page => page.slug === slug))[0] || ''
+  }
+
+  const navHandler = (slug: string, /*position: string, offset: number*/) => {
+
+    history.push(getKeyFromSlug(slug))
+    //scroller.scrollTo(position, offset)
+  }
     return (
       <div className="intro">
         <MDBContainer className="p-5">
@@ -63,7 +82,7 @@ const IntroSection = ({maincontent1, columnheading1, columnheading2, columnheadi
           <MDBRow className="justify-content-center">
             <MDBCol md="3" className="text-center mb-3 col-features">
               <img
-                src={Hand}
+                src={Quality}
                 alt={columnheading1 + " image"}
                 className="img-fluid mb-3"
               />
@@ -73,7 +92,7 @@ const IntroSection = ({maincontent1, columnheading1, columnheading2, columnheadi
             </MDBCol>
             <MDBCol md="3" className="text-center mb-3 col-features">
               <img
-                src={Hydrant}
+                src={Hand}
                 alt={columnheading2 + " image"}
                 className="img-fluid mb-3"
               />
@@ -83,7 +102,7 @@ const IntroSection = ({maincontent1, columnheading1, columnheading2, columnheadi
             </MDBCol>
             <MDBCol md="3" className="text-center mb-3 col-features">
               <img
-                src={Quality}
+                src={Hydrant}
                 alt={columnheading3 + " image"}
                 className="img-fluid mb-3"
               />
@@ -94,13 +113,20 @@ const IntroSection = ({maincontent1, columnheading1, columnheading2, columnheadi
           </MDBRow>
           <MDBRow className="justify-content-center">
             <MDBCol md="9" className="text-center mb-3 col-features">
-              <MDBBtn color="white" size="lg" rounded>
+              <Link
+                onClick={() => navHandler("home", /*"about", 300*/)}
+                to="connect"
+                smooth={true}
+                spy={true}
+                duration={300}
+                offset={-150}
+              >
                 {button1}
-                <MDBIcon
-                  icon="arrow-right"
-                  className="ps-2 fa-lg"
-                />
-              </MDBBtn>
+                <MDBBtn color="white" size="lg" rounded >
+                  {button1}
+                  <MDBIcon icon="arrow-right" className="ps-3 fa-lg" />
+                </MDBBtn>
+              </Link>
             </MDBCol>
           </MDBRow>
         </MDBContainer>

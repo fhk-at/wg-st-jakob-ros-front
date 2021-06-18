@@ -20,7 +20,7 @@ import {
   MDBCheckbox,
 } from 'mdb-react-ui-kit';
 
-  
+
 //> CSS
 import "./index.scss";
 
@@ -42,9 +42,13 @@ const EmailForm = (): JSX.Element => {
     fname: '',
     lname: '',
     email: '',
-    subject: '',
-    state: '',
-    message: '',
+    telephone: '',
+    address: '',
+    meterid: '',
+    mainmeter: '',
+    submeter1: '',
+    submeter2: '',
+    annotation: '',
   });
 
   const onChange = (e: any) => {
@@ -58,6 +62,7 @@ const EmailForm = (): JSX.Element => {
           <MDBInput
             value={formValue.fname}
             name='fname'
+            placeholder='Vorname'
             onChange={onChange}
             id='validationCustom01'
             required
@@ -70,6 +75,7 @@ const EmailForm = (): JSX.Element => {
           <MDBInput
             value={formValue.lname}
             name='lname'
+            placeholder='Nachname'
             onChange={onChange}
             id='validationCustom02'
             required
@@ -82,8 +88,9 @@ const EmailForm = (): JSX.Element => {
           <MDBInput
             value={formValue.email}
             name='email'
+            placeholder='z. B. wasser@stjakob.at'
             onChange={onChange}
-            id='validationCustom02'
+            id='validationCustom03'
             required
             label='Email' 
             type='email'
@@ -93,10 +100,11 @@ const EmailForm = (): JSX.Element => {
         </div>
         <div className='col-md-12'>
           <MDBInput
-            value={formValue.subject}
+            value={formValue.telephone}
             name='telephone'
+            placeholder='Telefonnummer'
             onChange={onChange}
-            id='validationCustom03'
+            id='validationCustom04'
             label='Telefonnummer (optional)'
             type='tel'
             validation='Bitte geben Sie eine gültige Telefonnummer ein!'
@@ -105,26 +113,79 @@ const EmailForm = (): JSX.Element => {
         </div>
         <div className='col-md-12'>
           <MDBInput
-            value={formValue.subject}
-            name='subject'
+            value={formValue.address}
+            name='address'
+            placeholder='Straße und Hausnummer'
             onChange={onChange}
-            id='validationCustom03'
+            id='validationCustom05'
             required
-            label='Betreff'
+            label='Adresse'
             validation='Pflichtfeld!'
             invalid
           />
         </div>
         <div className='col-md-12'>
-          <MDBInput 
-            value={formValue.message}
-            name='message'
+          <MDBInput
+            value={formValue.meterid}
+            name='meterid'
+            placeholder='Zählernummer'
             onChange={onChange}
-            label='Message'
-            validation='Please provide a valid zip.'
-            id='validationCustom05'
+            id='validationCustom07'
+            label='Zählernummer'
+            type='number'
+            validation='Bitte geben Sie einen gültigen Zählernummer ein!'
+            invalid
+          />
+        </div>
+        <div className='col-md-12'>
+          <MDBInput
+            value={formValue.mainmeter}
+            name='mainmeter'
+            placeholder='Hauptzählerstand'
+            onChange={onChange}
+            id='validationCustom08'
+            label='Hauptzählerstand'
+            type='number'
+            validation='Bitte geben Sie einen gültigen Zählerstand ein!'
+            invalid
+          />
+        </div>
+        <div className='col-md-12'>
+          <MDBInput
+            value={formValue.submeter1}
+            name='submeter1'
+            placeholder='1. Subzähler'
+            onChange={onChange}
+            id='validationCustom09'
+            label='1. Subzähler'
+            type='number'
+            validation='Bitte geben Sie einen gültigen Zählerstand ein!'
+            invalid
+          />
+        </div>
+        <div className='col-md-12'>
+          <MDBInput
+            value={formValue.submeter2}
+            name='submeter2'
+            placeholder='2. Subzähler'
+            onChange={onChange}
+            id='validationCustom10'
+            label='2. Subzähler'
+            type='number'
+            validation='Bitte geben Sie einen gültigen Zählerstand ein!'
+            invalid
+          />
+        </div>
+        <div className='col-md-12'>
+          <MDBInput 
+            value={formValue.annotation}
+            name='annotation'
+            placeholder='Hier können Sie Ihre Anmerkungen schreiben.'
+            onChange={onChange}
+            label='Anmerkungen'
+            // validation='Please provide a valid zip.'
+            id='validationCustom11'
             textarea rows={4}
-            required
             invalid
           />
         </div>
@@ -141,7 +202,7 @@ const EmailForm = (): JSX.Element => {
           </div>
         </div>
         <div className='col-12'>
-          <MDBBtn type='submit' onClick={() => BridgeDrop.buildIn.mutations.doJaenEmailFormPageMutation({url: "/jaen-email", values:{git_remote: "fhk-at/wg-st-jakob-ros-front", form_first_name: formValue.fname, form_last_name: formValue.lname, subject: formValue.subject, html_message: formValue.message}})}>Submit form</MDBBtn>
+          <MDBBtn type='submit' onClick={() => BridgeDrop.buildIn.mutations.doJaenEmailFormPageMutation({url: "/wg-metering", values:{git_remote: "fhk-at/wg-st-jakob-ros-front", form_first_name: formValue.fname, form_last_name: formValue.lname, telephone: formValue.telephone, address: formValue.address, meterid: formValue.meterid, mainmeter: formValue.mainmeter, submeter1: formValue.submeter1, submeter2: formValue.submeter1, annotion: formValue.annotation}})}>Submit form</MDBBtn>
         </div>
       </MDBValidation>
     </div>

@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "https://kleberbaum-react-typescript-template.mdbgo.io/static/css/main.2d891803.chunk.css",
+    "main.js": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/main.e49af74d.chunk.js",
+    "main.js.map": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/main.e49af74d.chunk.js.map",
+    "runtime-main.js": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/runtime-main.1ecba042.js",
+    "runtime-main.js.map": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/runtime-main.1ecba042.js.map",
+    "static/css/2.7149c327.chunk.css": "https://kleberbaum-react-typescript-template.mdbgo.io/static/css/2.7149c327.chunk.css",
+    "static/js/2.4cd15b36.chunk.js": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/2.4cd15b36.chunk.js",
+    "static/js/2.4cd15b36.chunk.js.map": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/2.4cd15b36.chunk.js.map",
+    "index.html": "https://kleberbaum-react-typescript-template.mdbgo.io/index.html",
+    "static/css/2.7149c327.chunk.css.map": "https://kleberbaum-react-typescript-template.mdbgo.io/static/css/2.7149c327.chunk.css.map",
+    "static/css/main.2d891803.chunk.css.map": "https://kleberbaum-react-typescript-template.mdbgo.io/static/css/main.2d891803.chunk.css.map",
+    "static/js/2.4cd15b36.chunk.js.LICENSE.txt": "https://kleberbaum-react-typescript-template.mdbgo.io/static/js/2.4cd15b36.chunk.js.LICENSE.txt",
+    "static/media/bg1.f40d0da2.jpg": "https://kleberbaum-react-typescript-template.mdbgo.io/static/media/bg1.f40d0da2.jpg",
+    "static/media/hand.566c134f.png": "https://kleberbaum-react-typescript-template.mdbgo.io/static/media/hand.566c134f.png",
+    "static/media/hydrant.e8950244.png": "https://kleberbaum-react-typescript-template.mdbgo.io/static/media/hydrant.e8950244.png",
+    "static/media/logo.3ec70052.svg": "https://kleberbaum-react-typescript-template.mdbgo.io/static/media/logo.3ec70052.svg",
+    "static/media/quality.83d7e91d.png": "https://kleberbaum-react-typescript-template.mdbgo.io/static/media/quality.83d7e91d.png",
+    "static/media/index.scss": "https://kleberbaum-react-typescript-template.mdbgo.io/static/media/wave-mask.5d2fd03a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1ecba042.js",
+    "static/css/2.7149c327.chunk.css",
+    "static/js/2.4cd15b36.chunk.js",
+    "static/css/main.2d891803.chunk.css",
+    "static/js/main.e49af74d.chunk.js"
+  ]
+}

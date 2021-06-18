@@ -42,6 +42,7 @@ const EmailForm = (): JSX.Element => {
     fname: '',
     lname: '',
     email: '',
+    telephone: '',
     subject: '',
     state: '',
     message: '',
@@ -54,10 +55,11 @@ const EmailForm = (): JSX.Element => {
   return (
     <div className="cmstable">
       <MDBValidation className='row g-3' noValidate>
-        <div className='col-md-4'>
+      <div className='col-md-4'>
           <MDBInput
             value={formValue.fname}
             name='fname'
+            placeholder='Vorname'
             onChange={onChange}
             id='validationCustom01'
             required
@@ -70,6 +72,7 @@ const EmailForm = (): JSX.Element => {
           <MDBInput
             value={formValue.lname}
             name='lname'
+            placeholder='Nachname'
             onChange={onChange}
             id='validationCustom02'
             required
@@ -82,8 +85,9 @@ const EmailForm = (): JSX.Element => {
           <MDBInput
             value={formValue.email}
             name='email'
+            placeholder='z. B. wasser@stjakob.at'
             onChange={onChange}
-            id='validationCustom02'
+            id='validationCustom03'
             required
             label='Email' 
             type='email'
@@ -93,10 +97,11 @@ const EmailForm = (): JSX.Element => {
         </div>
         <div className='col-md-12'>
           <MDBInput
-            value={formValue.subject}
+            value={formValue.telephone}
             name='telephone'
+            placeholder='Telefonnummer'
             onChange={onChange}
-            id='validationCustom03'
+            id='validationCustom04'
             label='Telefonnummer (optional)'
             type='tel'
             validation='Bitte geben Sie eine gültige Telefonnummer ein!'
@@ -107,8 +112,9 @@ const EmailForm = (): JSX.Element => {
           <MDBInput
             value={formValue.subject}
             name='subject'
+            placeholder='Betreff'
             onChange={onChange}
-            id='validationCustom03'
+            id='validationCustom05'
             required
             label='Betreff'
             validation='Pflichtfeld!'
@@ -119,10 +125,11 @@ const EmailForm = (): JSX.Element => {
           <MDBInput 
             value={formValue.message}
             name='message'
+            placeholder='Bitte geben Sie Ihre Nachricht ein.'
             onChange={onChange}
             label='Message'
             validation='Please provide a valid zip.'
-            id='validationCustom05'
+            id='validationCustom06'
             textarea rows={4}
             required
             invalid
@@ -141,7 +148,7 @@ const EmailForm = (): JSX.Element => {
           </div>
         </div>
         <div className='col-12'>
-          <MDBBtn type='submit' onClick={() => BridgeDrop.buildIn.mutations.doJaenEmailFormPageMutation({url: "/jaen-email", values:{git_remote: "fhk-at/wg-st-jakob-ros-front", form_first_name: formValue.fname, form_last_name: formValue.lname, subject: formValue.subject, html_message: formValue.message}})}>Submit form</MDBBtn>
+          <MDBBtn type='submit' onClick={() => BridgeDrop.buildIn.mutations.doJaenEmailFormPageMutation({url: "/wg-contact", values:{git_remote: "fhk-at/wg-st-jakob-ros-front", form_first_name: formValue.fname, form_last_name: formValue.lname, telephone: formValue.telephone, subject: formValue.subject, html_message: formValue.message}})}>Submit form</MDBBtn>
         </div>
       </MDBValidation>
     </div>

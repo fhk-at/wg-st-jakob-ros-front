@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ed44f83.chunk.css",
-    "main.js": "/static/js/main.0127f479.chunk.js",
-    "main.js.map": "/static/js/main.0127f479.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.9298597a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.9298597a.js.map",
-    "static/css/2.7149c327.chunk.css": "/static/css/2.7149c327.chunk.css",
-    "static/js/2.118c1c8e.chunk.js": "/static/js/2.118c1c8e.chunk.js",
-    "static/js/2.118c1c8e.chunk.js.map": "/static/js/2.118c1c8e.chunk.js.map",
-    "index.html": "/index.html",
-    "static/css/2.7149c327.chunk.css.map": "/static/css/2.7149c327.chunk.css.map",
-    "static/css/main.5ed44f83.chunk.css.map": "/static/css/main.5ed44f83.chunk.css.map",
-    "static/js/2.118c1c8e.chunk.js.LICENSE.txt": "/static/js/2.118c1c8e.chunk.js.LICENSE.txt",
-    "static/media/bg1.f40d0da2.jpg": "/static/media/bg1.f40d0da2.jpg",
-    "static/media/hand.566c134f.png": "/static/media/hand.566c134f.png",
-    "static/media/hydrant.e8950244.png": "/static/media/hydrant.e8950244.png",
-    "static/media/logo.3ec70052.svg": "/static/media/logo.3ec70052.svg",
-    "static/media/quality.83d7e91d.png": "/static/media/quality.83d7e91d.png",
-    "static/media/index.scss": "/static/media/wave-mask.5d2fd03a.svg"
+    "main.css": "https://wg-st-jakob-ros.at/static/css/main.5da1bef4.chunk.css",
+    "main.js": "https://wg-st-jakob-ros.at/static/js/main.02a301f6.chunk.js",
+    "main.js.map": "https://wg-st-jakob-ros.at/static/js/main.02a301f6.chunk.js.map",
+    "runtime-main.js": "https://wg-st-jakob-ros.at/static/js/runtime-main.d1f5dbad.js",
+    "runtime-main.js.map": "https://wg-st-jakob-ros.at/static/js/runtime-main.d1f5dbad.js.map",
+    "static/css/2.7149c327.chunk.css": "https://wg-st-jakob-ros.at/static/css/2.7149c327.chunk.css",
+    "static/js/2.61b10a64.chunk.js": "https://wg-st-jakob-ros.at/static/js/2.61b10a64.chunk.js",
+    "static/js/2.61b10a64.chunk.js.map": "https://wg-st-jakob-ros.at/static/js/2.61b10a64.chunk.js.map",
+    "index.html": "https://wg-st-jakob-ros.at/index.html",
+    "static/css/2.7149c327.chunk.css.map": "https://wg-st-jakob-ros.at/static/css/2.7149c327.chunk.css.map",
+    "static/css/main.5da1bef4.chunk.css.map": "https://wg-st-jakob-ros.at/static/css/main.5da1bef4.chunk.css.map",
+    "static/js/2.61b10a64.chunk.js.LICENSE.txt": "https://wg-st-jakob-ros.at/static/js/2.61b10a64.chunk.js.LICENSE.txt",
+    "static/media/bg1.f40d0da2.jpg": "https://wg-st-jakob-ros.at/static/media/bg1.f40d0da2.jpg",
+    "static/media/hand.566c134f.png": "https://wg-st-jakob-ros.at/static/media/hand.566c134f.png",
+    "static/media/hydrant.e8950244.png": "https://wg-st-jakob-ros.at/static/media/hydrant.e8950244.png",
+    "static/media/logo.3ec70052.svg": "https://wg-st-jakob-ros.at/static/media/logo.3ec70052.svg",
+    "static/media/quality.83d7e91d.png": "https://wg-st-jakob-ros.at/static/media/quality.83d7e91d.png",
+    "static/media/index.scss": "https://wg-st-jakob-ros.at/static/media/wave-mask.5d2fd03a.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.9298597a.js",
+    "static/js/runtime-main.d1f5dbad.js",
     "static/css/2.7149c327.chunk.css",
-    "static/js/2.118c1c8e.chunk.js",
-    "static/css/main.5ed44f83.chunk.css",
-    "static/js/main.0127f479.chunk.js"
+    "static/js/2.61b10a64.chunk.js",
+    "static/css/main.5da1bef4.chunk.css",
+    "static/js/main.02a301f6.chunk.js"
   ]
 }

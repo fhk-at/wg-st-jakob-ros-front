@@ -218,7 +218,7 @@ const HeroSection = ({sectionData}: Props): JSX.Element => {
                         duration={500}
                         delay="200ms"
                       >
-                        <span>St. Jakob i. Ros.</span>
+                        <span>St. Dominik i. Ros.</span>
                       </MDBAnimation>
                       {loaded && data.slideButton.buttonTitle && (
                         <MDBAnimation

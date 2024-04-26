@@ -87,7 +87,7 @@ const Navbar = ({
           <MDBNavbarBrand href="/">
             <img src={logoUrl} alt={logoAlt} className="navlogo" />
           </MDBNavbarBrand>
-          <MDBNavbarBrand className="navtitle d-block d-lg-none">WG St. Jakob i. Ros.</MDBNavbarBrand>
+          <MDBNavbarBrand className="navtitle d-block d-lg-none">WG St. Dominik i. Ros.</MDBNavbarBrand>
           <div>
             <MDBNavbarToggler
               aria-controls='navbarSupportedContent'

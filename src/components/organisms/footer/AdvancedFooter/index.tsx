@@ -149,7 +149,7 @@ const AdvancedFooter = ({ copyrightText, copyrightUrl }: Props) => {
           <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             
             <h6 className="text-uppercase fw-bold mb-4">
-              WG ST. JAKOB I. ROS.
+              WG ST. DOMINIK I. ROS.
             </h6>
             <p>
             Zweck der Genossenschaft ist die Wasserversorgung der genossenschaftlichen Grundstücke und Anlagen.

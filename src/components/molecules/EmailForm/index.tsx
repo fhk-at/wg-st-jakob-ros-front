@@ -144,7 +144,7 @@ const EmailForm = (): JSX.Element => {
             required
           />
           <div id='textExample1' className='form-text'>
-          Hiermit nehme Ich die Datenschutzerklärung der Wassergenossenschaft St. Jakob im Rosental an. Ich nehme zur Kenntnis, dass die von mir eingebenen Daten von der Wassergenossenchaft ausgewertet werden dürfen. Weitere Informationen finden Sie unter  Datenschutzerklärung.
+          Hiermit nehme Ich die Datenschutzerklärung der Wassergenossenschaft St. Dominik im Rosental an. Ich nehme zur Kenntnis, dass die von mir eingebenen Daten von der Wassergenossenchaft ausgewertet werden dürfen. Weitere Informationen finden Sie unter  Datenschutzerklärung.
           </div>
         </div>
         <div className='col-12'>
